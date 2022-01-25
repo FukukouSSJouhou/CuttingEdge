@@ -5,8 +5,8 @@ def main():
     if(len(sys.argv) < 3):
         print("err")
         return
-    cv2kun(sys.argv[1],sys.argv[2],True)
-def cv2kun(gazouniki,out_dir,nocolor):
+    cv2kun(sys.argv[1],sys.argv[2],True,True)
+def cv2kun(gazouniki,out_dir,nocolor,sizeresize):
     cascade_path = './FACE/models/haarcascade_frontalface_default.xml'
     cascade = cv2.CascadeClassifier(cascade_path)
     fr = cv2.imread(gazouniki)
@@ -23,6 +23,8 @@ def cv2kun(gazouniki,out_dir,nocolor):
                 img=gray[y:y+h,x:x+w]
             else:
                 img=fr[y:y+h,x:x+w]
+            if sizeresize:
+                img=cv2.resize(img,(48,48))
             cv2.imwrite(save_path, img)
             i+=1
     # ガター内の緑色のボタンを押すとスクリプトを実行します。

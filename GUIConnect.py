@@ -1,3 +1,5 @@
+import os
+
 from PySide2 import QtCore
 
 
@@ -8,6 +10,10 @@ class GUIConnect(QtCore.QObject):
     def running_process(self,stroniisan,outfileoniisan):
         print(stroniisan)
         print(outfileoniisan)
+        inputfiles=os.listdir(stroniisan)
+        for a in inputfiles:
+            print(a)
+            print(os.path.join(outfileoniisan , a))
     @QtCore.Slot(str)
     def print_stdout(selfself,strtextkun):
         print(strtextkun)

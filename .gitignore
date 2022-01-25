@@ -1,0 +1,16 @@
+*.qmlproject.*
+*.qmlproject
+*.db*
+*.db
+__pycache__/
+.idea/
+_audio/
+FACE/temp_img/
+
+FACE/facepointmemo/
+
+FACE/emomemo/
+
+MakeGraph/graphs/
+
+SENTENCE/split_temp/
